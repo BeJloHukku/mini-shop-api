@@ -8,5 +8,6 @@ dependencies = [
     "fastapi>=0.128.0",
     "pydantic[email]>=2.12.5",
     "pytest>=9.0.2",
+    "sqlalchemy[asyncio]>=2.0.45",
     "uvicorn>=0.40.0",
 ]

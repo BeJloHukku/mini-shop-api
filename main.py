@@ -1,5 +1,4 @@
-from fastapi import FastAPI, Path
-from pydantic import BaseModel, EmailStr
+from fastapi import FastAPI
 
 import uvicorn
 
