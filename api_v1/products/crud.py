@@ -12,7 +12,7 @@ async def get_products(session: AsyncSession) -> list[Product]:
     products = result.scalars().all()
     return list(products)
 
-async def get_prioduct(session: AsyncSession, product_id: int) -> Product | None:
+async def get_product(session: AsyncSession, product_id: int) -> Product | None:
     return await session.get(Product, product_id)
 
 async def create_product(session: AsyncSession, product_in: ProductCreate) -> Product:
