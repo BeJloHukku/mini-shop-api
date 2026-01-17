@@ -21,12 +21,13 @@ if config.config_file_name is not None:
 # from myapp import mymodel
 from core.models import Base
 from core.config import settings
+
 target_metadata = Base.metadata
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
 # my_important_option = config.get_main_option("my_important_option")
-config.set_main_option("sqlalchemy.url", settings.db_url)
+config.set_main_option("sqlalchemy.url", settings.db.url)
 # ... etc.
 
 
