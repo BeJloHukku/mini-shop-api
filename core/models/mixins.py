@@ -13,8 +13,14 @@ class UserRelationMixin:
     _user_back_populates: str | None = None
     _user_id_nullable: bool = False
 
+    user_id: Mapped[int] = mapped_column(
+        ForeignKey("users.id"),
+        unique=_user_id_unique,
+        nullable=_user_id_nullable,
+    )
+
     @declared_attr
-    def user_id(cls):
+    def user_id(cls) -> Mapped[int]:
         return mapped_column(
             ForeignKey("users.id"),
             unique=cls._user_id_unique,
