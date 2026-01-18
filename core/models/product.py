@@ -13,7 +13,7 @@ class Product(Base):
     name: Mapped[str]
     description: Mapped[str]
     price: Mapped[int]
-    products: Mapped[list["Order"]] = relationship(
+    orders: Mapped[list["Order"]] = relationship(
         secondary=order_product_association_table,
         back_populates="products",
     )
