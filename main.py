@@ -9,12 +9,6 @@ from api_v1 import router as api_v1_router
 from contextlib import asynccontextmanager
 from core.config import settings
 
-
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    yield
-
-
 app = FastAPI(lifespan=lifespan, title="Mini-shop")
 app.include_router(items_router)
 app.include_router(users_router)
